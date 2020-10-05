@@ -11,7 +11,7 @@ interface KSet<V>: KCollection<V> {
      * @return `true` if this set did not already contain the specified
      * element
      */
-    fun add(value: V): Boolean
+    override fun add(value: V): Boolean
 
     /**
      * Removes the specified element from this set if it is present.
@@ -19,5 +19,5 @@ interface KSet<V>: KCollection<V> {
      * @param value object to be removed from this set, if present
      * @return `true` if this set contained the specified element
      */
-    fun remove(value: V): Boolean
+    override fun remove(value: V): Boolean
 }

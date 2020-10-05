@@ -4,10 +4,14 @@ class UnbalancedTreeException(override val message: String): RuntimeException(me
 
     companion object {
 
-        fun create(message: String,
-                   leftHeight: Int,
-                   rightHeight: Int,
-                   nodeInfo: String): UnbalancedTreeException {
+        private const val serialVersionUID: Long = 7869829465216879L
+
+        fun create(
+            message: String,
+            leftHeight: Int,
+            rightHeight: Int,
+            nodeInfo: String
+        ): UnbalancedTreeException {
 
             return UnbalancedTreeException(
                 message + "\n"

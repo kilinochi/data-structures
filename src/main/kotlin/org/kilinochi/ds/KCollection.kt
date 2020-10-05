@@ -1,7 +1,25 @@
 package org.kilinochi.ds
 
+import java.util.stream.Stream
+
 interface KCollection<V> {
 
+    /**
+     * Adds the specified element to this set if it is not already present.
+     *
+     * @param value element to be added to this set
+     * @return `true` if this set did not already contain the specified
+     * element
+     */
+    fun add(value: V): Boolean
+
+    /**
+     * Removes the specified element from this set if it is present.
+     *
+     * @param value object to be removed from this set, if present
+     * @return `true` if this set contained the specified element
+     */
+    fun remove(value: V): Boolean
 
     /**
      * Returns the number of elements in this collection.
@@ -32,4 +50,14 @@ interface KCollection<V> {
      * The collection will be empty after this method returns.
      */
     fun clear()
+
+    /**
+     * return stream of elements from this collection.
+     *
+     * @return stream of elements from this collection.
+     */
+    @JvmDefault
+    fun stream(): Stream<V> {
+        return Stream.empty()
+    }
 }
